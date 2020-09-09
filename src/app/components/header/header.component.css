@@ -1,0 +1,11 @@
+div{
+  background-color: black;
+  overflow: hidden;
+  height: 50px;
+  padding-top: 1%;
+}
+a{
+  padding-left: 5%;
+  font-size: 24px;
+  color: gray;
+}
