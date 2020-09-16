@@ -1,19 +1,12 @@
 <div>
+  <form>
   <table border="2">
-    <tr>
-    <td class="check"><input type="checkbox"></td>
-      <td class="text"><p>First Item</p></td>
-    <td class="check2"><img src="assets/rubbish.png"></td>
-    </tr>
-    <tr>
-      <td class="check"><input type="checkbox"></td>
-      <td class="text"><p>Second Item</p></td>
-      <td class="check2"><img src="assets/rubbish.png"></td>
-    </tr>
-    <tr>
-      <td class="check"><input type="checkbox"></td>
-      <td class="text"><p>Third Item</p></td>
-      <td class="check2"><img src="assets/rubbish.png"></td>
+    <tr *ngFor="let item of items;index as i ">
+      <td class="check" *ngIf="item.checked"><input type="checkbox" checked></td>
+      <td class="check" *ngIf="!item.checked"><input type="checkbox"></td>
+      <td class="text"><p>{{item.name}}</p></td>
+      <td class="check2"><button (click)="delete(item)"><img src="assets/rubbish.png"></button></td>
     </tr>
   </table>
+  </form>
 </div>
