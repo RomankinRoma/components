@@ -1,2 +1,22 @@
-<app-search></app-search>
-<app-to-do-list></app-to-do-list>
+<div class="form-group">
+  <form (ngSubmit)="addItem(name,checked)">
+  <p class="searchP">ToDo List</p>
+    <input class="checkbox" type="checkbox" [(ngModel)]="checked" [ngModelOptions]="{standalone:true}" name="checked">
+    <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone:true}" class="searchInput" placeholder="New Item">
+  <input class="searchButton" type="submit" value="Add">
+  </form>
+</div>
+
+<div>
+  <form>
+    <table>
+      <tr *ngFor="let i of items">
+        <td class="check" *ngIf="i.checked"><input type="checkbox" checked></td>
+        <td class="check" *ngIf="!i.checked"><input type="checkbox"></td>
+        <td class="text"><p>{{i.name}}</p></td>
+        <td class="check2"><button (click)="removeItem(i)"><img src="assets/rubbish.png"></button></td>
+      </tr>
+    </table>
+</form>
+</div>
+
